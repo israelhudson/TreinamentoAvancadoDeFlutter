@@ -1,6 +1,7 @@
 import 'package:calc_basic_flutter/controller/calc_controller.dart';
 import 'package:calc_basic_flutter/view/contador_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Controller controller = Controller();
+  Controller controller = GetIt.I<Controller>();
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,17 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   controller.decrement();
                 }),
+            AnimatedBuilder(
+              animation: controller,
+              builder: (_,__) {
+                return AnimatedContainer(
+                  width: controller.counter %2==0 ? 200 : 300,
+                  height: 200,
+                  color: controller.counter %2==0 ? Colors.deepOrange : Colors.black,
+                  duration: Duration(milliseconds: 500),
+                );
+              }
+            )
           ],
         ),
       ),
