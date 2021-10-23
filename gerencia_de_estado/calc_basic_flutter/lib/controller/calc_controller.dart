@@ -1,22 +1,17 @@
-class Controller {
-  final IUpdateController iUpdateController;
-  int counter = 0;
+import 'package:flutter/cupertino.dart';
 
-  Controller(this.iUpdateController);
+class Controller extends ChangeNotifier {
+  int counter = 0;
 
   add(){
     counter++;
 
-    iUpdateController.onUpdate();
+    notifyListeners();
   }
 
   decrement(){
     counter--;
 
-    iUpdateController.onUpdate();
+    notifyListeners();
   }
-}
-
-abstract class IUpdateController {
-  onUpdate();
 }

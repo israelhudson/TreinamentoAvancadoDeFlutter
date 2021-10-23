@@ -8,14 +8,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> implements IUpdateController {
-  late Controller controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = Controller(this);
-  }
+class _HomePageState extends State<HomePage> {
+  Controller controller = Controller();
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +22,14 @@ class _HomePageState extends State<HomePage> implements IUpdateController {
         alignment: Alignment.center,
         child: Column(
           children: [
-            Text(
-              '${controller.counter}',
-              style: const TextStyle(fontSize: 20),
+            AnimatedBuilder(
+              animation: controller,
+              builder: (_, __) {
+                return Text(
+                  '${controller.counter}',
+                  style: const TextStyle(fontSize: 20),
+                );
+              }
             ),
             ElevatedButton(
                 child: const Icon(Icons.add_circle_outline_sharp),
@@ -45,15 +44,6 @@ class _HomePageState extends State<HomePage> implements IUpdateController {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add_circle_sharp),
-        onPressed: () {},
-      ),
     );
-  }
-
-  @override
-  onUpdate() {
-    setState(() {});
   }
 }
