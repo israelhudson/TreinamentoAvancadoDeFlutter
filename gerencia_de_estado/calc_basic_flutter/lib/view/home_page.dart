@@ -1,4 +1,5 @@
 import 'package:calc_basic_flutter/controller/calc_controller.dart';
+import 'package:calc_basic_flutter/view/contador_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,15 +23,7 @@ class _HomePageState extends State<HomePage> {
         alignment: Alignment.center,
         child: Column(
           children: [
-            AnimatedBuilder(
-              animation: controller,
-              builder: (_, __) {
-                return Text(
-                  '${controller.counter}',
-                  style: const TextStyle(fontSize: 20),
-                );
-              }
-            ),
+            ContadorWidget(),
             ElevatedButton(
                 child: const Icon(Icons.add_circle_outline_sharp),
                 onPressed: () {
