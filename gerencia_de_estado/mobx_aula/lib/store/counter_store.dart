@@ -1,18 +1,13 @@
 import 'package:mobx/mobx.dart';
 
-class CounterStore {
-  late Action increment;
-  final _counter = Observable(0);
+part 'counter_store.g.dart';
 
-  CounterStore() {
-    increment = Action(_increment);
-  }
+class CounterStore = CounterStoreBase with _$CounterStore;
 
-  int get counter => _counter.value;
+abstract class CounterStoreBase with Store {
+  @observable
+  var counter = 0;
 
-  set counter(int newValue) => _counter.value = newValue;
-
-  void _increment() {
-    _counter.value++;
-  }
+  @action
+  increment(int newValue)=>counter = counter + newValue;
 }
