@@ -10,10 +10,25 @@ class HomePageTodoList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    store.addToList(TodoModel(1, 'Fazer merenda', false));
+    store.addToList(TodoModel(0, 'Fazer merenda', false));
     return Scaffold(
       appBar: AppBar(
         title: Text('Todo List'),
+        actions: [
+          Observer(
+            builder: (context) {
+              int counterDone = 0;
+              store.list.forEach((element) {
+                if(element.isDone == true){
+                  counterDone++;
+                }
+
+              });
+
+              return Text('$counterDone');
+            }
+          )
+        ],
       ),
       body: Container(
         child: Observer(builder: (context) {
@@ -23,11 +38,16 @@ class HomePageTodoList extends StatelessWidget {
                 final model = store.list[index];
 
                 return Card(
-                  child: ListTile(
-                      title: Text("${model.id} ${model.desc} ${model.isDone}"),
-                      onTap: (){
-                        store.removeToList(index: index);
-                      },
+                  color: model.isDone ? Colors.indigo : Colors.white,
+                  child: Observer(
+                    builder: (context) {
+                      return ListTile(
+                          title: Text("${model.id} ${model.desc} ${model.isDone}"),
+                          onTap: (){
+                            store.markisDone(index, model);
+                          },
+                      );
+                    }
                   ),
                 );
               });
@@ -36,9 +56,37 @@ class HomePageTodoList extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          store.addToList(TodoModel(store.list.length + 1, 'Escovar os dentes', true));
+          addOrEditTodo(context);
         },
       ),
+    );
+  }
+
+  void addOrEditTodo(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context){
+
+          //controlador de valores do campo de texto
+          var edit = TextEditingController();
+
+          return AlertDialog(
+            title: Text("Adicionando Tarefa"),
+            content: TextField(
+              controller: edit,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("CADASTRAR"),
+                onPressed: (){
+                  store.addToList(TodoModel(store.list.length + 1, edit.text, false));
+
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          );
+        }
     );
   }
 }

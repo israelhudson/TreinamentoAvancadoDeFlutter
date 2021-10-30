@@ -50,6 +50,28 @@ mixin _$TodoStore on TodoStoreBase, Store {
   }
 
   @override
+  void markisDone(int index, TodoModel model) {
+    final _$actionInfo = _$TodoStoreBaseActionController.startAction(
+        name: 'TodoStoreBase.markisDone');
+    try {
+      return super.markisDone(index, model);
+    } finally {
+      _$TodoStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void upateDesc({required TodoModel model, required int index}) {
+    final _$actionInfo = _$TodoStoreBaseActionController.startAction(
+        name: 'TodoStoreBase.upateDesc');
+    try {
+      return super.upateDesc(model: model, index: index);
+    } finally {
+      _$TodoStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 list: ${list}
