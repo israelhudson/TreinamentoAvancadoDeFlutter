@@ -50,6 +50,8 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          //dev.log('INCREMENTOU');
+          //dev.debugger();
           store.increment();
         },
         child: Icon(Icons.add),

@@ -19,14 +19,22 @@ class CatalogPageState extends State<CatalogPage> {
         title: Text(widget.title),
       ),
       body: ListView.builder(
-          itemCount: store.fotos.length,
+          itemCount: store.photos.length,
           itemBuilder: (context, index) {
-            final foto = store.fotos[index];
+            final photo = store.photos[index];
             return InkWell(
                 onTap: () {
-                  Modular.to.pushNamed('/catalog/image_detail');
+                  Modular.to.pushNamed(
+                    '/catalog/image_detail_id/${index + 1}',
+                  );
+                  //.pushNamed('/catalog/image_detail', arguments: photo);
                 },
-                child: Card(child: Image.network(foto)));
+                child: Card(
+                    child: ListTile(
+                  subtitle: Text(photo.title),
+                  title:
+                      Hero(tag: photo.title, child: Image.network(photo.url)),
+                )));
           }),
     );
   }
