@@ -1,0 +1,14 @@
+{"version":1,"sembast":1}
+{"key":1,"store":"fruits","value":{"name":"Morango rrr","isSweet":false}}
+{"key":2,"store":"fruits","value":{"name":"Uva","isSweet":false}}
+{"key":1,"store":"fruits","value":{"name":"Manga Rosa","isSweet":true}}
+{"key":1,"store":"fruits","value":{"name":"Manga Rosa","isSweet":false}}
+{"key":3,"store":"fruits","value":{"name":"Teste","isSweet":false}}
+{"key":3,"deleted":true,"store":"fruits"}
+{"key":1,"store":"todos","value":{"name":"Lavar Louça","isDone":false}}
+{"key":2,"store":"todos","value":{"name":"Merendar","isDone":false}}
+{"key":3,"store":"todos","value":{"name":"Cachaça","isDone":false}}
+{"key":4,"store":"todos","value":{"name":"ROY KEANE","isDone":false}}
+{"key":5,"store":"todos","value":{"name":"ELIAS","isDone":false}}
+{"key":6,"store":"todos","value":{"name":"ELIAS","isDone":false}}
+{"key":7,"store":"todos","value":{"name":"Merendar","isDone":false}}
