@@ -1,8 +1,13 @@
 import 'package:get_storage/get_storage.dart';
 
 class LocalToken {
-  //final box = Hive.box('auth');
   final box = GetStorage();
+
+  bool get isLogged => box.read("isLogged");
+
+  set isLogged(bool value) {
+    box.write('isLogged', value);
+  }
 
   String get token => box.read("token");
 

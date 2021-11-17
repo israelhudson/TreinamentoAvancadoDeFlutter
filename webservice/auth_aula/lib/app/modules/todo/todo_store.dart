@@ -1,7 +1,6 @@
-import 'dart:developer' as dev;
-
 import 'package:auth_aula/app/shared/config/custom_dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'dart:developer' as dev;
 
 class TodoStore {
   void getTodos() async {

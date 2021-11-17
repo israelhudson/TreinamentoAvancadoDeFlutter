@@ -9,6 +9,7 @@ void main() {
       getPages: [
         GetPage(name: '/', page: () => Home()),
         GetPage(name: '/login', page: () => LoginRoute(), method: Method.post),
+        GetPage(name: '/renew', page: () => RenewRoute(), method: Method.post),
         GetPage(name: '/register', page: () => RegisterRoute()),
         GetPage(
             name: '/todo',

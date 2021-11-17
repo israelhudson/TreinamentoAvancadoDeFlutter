@@ -1,5 +1,6 @@
-import 'package:auth_aula/app/shared/config/interceptor_auth.dart';
 import 'package:dio/dio.dart';
+
+import 'interceptor_auth.dart';
 
 class CustomDio {
   late Dio _dio;

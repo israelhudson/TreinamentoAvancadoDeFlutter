@@ -7,6 +7,5 @@ import 'app/app_widget.dart';
 
 void main() async {
   await GetStorage.init();
-
   runApp(ModularApp(module: AppModule(), child: AppWidget()));
 }

@@ -1,7 +1,6 @@
+import 'package:auth_aula/app/modules/home/home_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -16,19 +15,17 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter'),
+        title: Text('HOME'),
       ),
-      body: Column(
+      body: ListView(
         children: [
           ElevatedButton(
-              onPressed: () => store.loginAuth(), child: Text("LOGIN"))
+              onPressed: () => Modular.to.pushNamed("/todo"),
+              child: Text("TODO"))
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //store.increment();
-          Modular.to.pushNamed("/todo/");
-        },
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
     );

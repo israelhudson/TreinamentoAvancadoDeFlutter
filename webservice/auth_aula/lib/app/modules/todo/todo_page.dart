@@ -1,4 +1,5 @@
 import 'package:auth_aula/app/modules/todo/todo_store.dart';
+import 'package:auth_aula/app/shared/local/local_token.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -21,6 +22,7 @@ class TodoPageState extends State<TodoPage> {
       body: Column(
         children: <Widget>[
           Text("TODO"),
+          Text("${Modular.get<LocalToken>().token}"),
           ElevatedButton(
               onPressed: () => store.getTodos(), child: Text("GET TODOS")),
           ElevatedButton(
