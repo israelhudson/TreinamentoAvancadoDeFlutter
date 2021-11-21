@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "969846545793",
+    "project_id": "flutterlead",
+    "storage_bucket": "flutterlead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969846545793:android:9c7b2a1e248f90142edc80",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_aula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969846545793-jjdacl1gr98utjljv6i0tge56a94el74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN4BbK5JUiQuNZH7IE21T0xyB7dKVmyxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969846545793-jjdacl1gr98utjljv6i0tge56a94el74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
