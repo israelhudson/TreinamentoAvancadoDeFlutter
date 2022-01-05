@@ -39,6 +39,8 @@ dependencies:
   flutter_mobx: ^2.0.2
   firebase_core:
   cloud_firestore:
+  firebase_auth: ^3.3.0
+  logger:
 
 dev_dependencies:
   flutter_test:

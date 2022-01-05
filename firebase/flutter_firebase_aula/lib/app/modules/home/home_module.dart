@@ -9,7 +9,7 @@ class HomeModule extends Module {
   @override
   final List<Bind> binds = [
     Bind.lazySingleton(
-        (i) => HomeStore(i.get<TodoService>(), i.get<FeitoService>())),
+        (i) => HomeStore(i.get<TodoService>(), i.get<FeitoService>(), i.get())),
     Bind.lazySingleton((i) => TodoService()),
     Bind.lazySingleton((i) => FeitoService()),
   ];

@@ -32,32 +32,40 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
                 icon: Icon(Icons.person),
                 hintText: 'Informe o todo'),
           ),
+          // ElevatedButton(
+          //     onPressed: () =>
+          //         store.createFeito(title: edtController.text, isDone: false),
+          //     child: Text("Create")),
+          // ElevatedButton(
+          //     onPressed: () => store.readFeito(idDoc: idDoc),
+          //     child: Text("Read")),
+          // ElevatedButton(
+          //     onPressed: () => store.updateFeito(
+          //         idDoc: idDoc,
+          //         data: {'titulo': edtController.text, 'feito': true}),
+          //     child: Text("Update")),
+          // ElevatedButton(
+          //     onPressed: () => store.deleteFeito(idDoc: idDoc),
+          //     child: Text("Delete")),
           ElevatedButton(
-              onPressed: () =>
-                  store.createFeito(title: edtController.text, isDone: false),
-              child: Text("Create")),
+              onPressed: () => Modular.to.pushNamed('/todo'),
+              child: Text("IR PARA TODO PAGE")),
           ElevatedButton(
-              onPressed: () => store.readFeito(idDoc: idDoc),
-              child: Text("Read")),
-          ElevatedButton(
-              onPressed: () => store.updateFeito(
-                  idDoc: idDoc,
-                  data: {'titulo': edtController.text, 'feito': true}),
-              child: Text("Update")),
-          ElevatedButton(
-              onPressed: () => store.deleteFeito(idDoc: idDoc),
-              child: Text("Delete")),
+              onPressed: () => Modular.to.pushNamed('/login'),
+              child: Text("IR PARA LOGIN PAGE")),
           Text('$text'),
+          ElevatedButton(
+              onPressed: () => store.logout(), child: Text("LOGOUT")),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //store.createTodo();
-          store.readFeito(idDoc: idDoc).then((value) {
-            setState(() {
-              text = value;
-            });
-          });
+          // store.readFeito(idDoc: idDoc).then((value) {
+          //   setState(() {
+          //     text = value;
+          //   });
+          // });
         },
         child: Icon(Icons.add),
       ),
